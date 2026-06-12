@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Navbar from './Components/Navbar'
 
 const containerClass = 'mx-auto max-w-[1200px] px-5 md:px-8'
 
@@ -45,105 +46,8 @@ function App() {
 
   return (
     <div className="min-h-screen">
+      <Navbar />
 
-      {/* Top Bar */}
-      <div className="z-[1100] border-b border-white/[0.06] bg-[#0a0a0a] py-2 text-[0.78rem] tracking-[0.3px] text-white/70">
-        <div className={`${containerClass} flex flex-wrap items-center justify-between gap-2 max-[768px]:flex-col max-[768px]:items-start max-[768px]:gap-[0.3rem]`}>
-          <div className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald" />
-            Dubai, UAE &nbsp;|&nbsp; Riyadh, Saudi Arabia
-          </div>
-          <div className="flex items-center gap-4 max-[768px]:gap-3">
-            <a href="mailto:info@islandtoweruae.ae" className="text-white/70 transition-colors hover:text-white">
-              info@islandtoweruae.ae
-            </a>
-            <span className="opacity-30">|</span>
-            <a href="tel:+97142573677" className="text-white/70 transition-colors hover:text-white">
-              +971 4 257 3677
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Header */}
-      <header
-        className={`sticky top-0 z-[1000] border-b backdrop-blur-[20px] transition-all duration-400 ${
-          scrolled
-            ? 'border-transparent bg-[#050505]/97 shadow-[0_1px_0_0_rgba(0,80,50,0.6),0_8px_32px_rgba(0,0,0,0.5)]'
-            : 'border-white/[0.06] bg-[#0a0a0a]/92'
-        }`}
-      >
-        <div className={`${containerClass} flex h-[70px] items-center justify-between gap-6`}>
-
-          {/* Logo */}
-          <a href="#home" className="flex shrink-0 items-center" aria-label="Island Tower Home">
-            <img
-              src="/assets/logo.png"
-              alt="Island Tower"
-              className="block h-[52px] w-auto object-contain"
-              onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex' }}
-            />
-            <div className="hidden items-center gap-2.5">
-              <span className="text-[1.6rem] text-[#e53935]">🗼</span>
-              <div>
-                <div className="font-heading text-[0.95rem] font-extrabold leading-none tracking-[1.5px] text-white">
-                  ISLAND TOWER
-                </div>
-                <div className="mt-1 font-body text-[0.42rem] tracking-[1.8px] text-white/45">
-                  ELECTROMECHANICAL WORKS LLC
-                </div>
-              </div>
-            </div>
-          </a>
-
-          {/* Desktop Nav */}
-          <nav className="hidden flex-1 flex-nowrap items-center justify-center gap-1 nav:flex" aria-label="Main navigation">
-            {navLinks.slice(0, -1).map(link => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="relative whitespace-nowrap rounded-md px-[0.7rem] py-[0.45rem] text-[0.8rem] font-medium tracking-[0.25px] text-white/70 transition-colors hover:bg-white/[0.07] hover:text-white max-[1024px]:text-[0.75rem]"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Right Actions */}
-          <div className="flex shrink-0 items-center gap-3">
-            <a
-              href="#contact"
-              className="whitespace-nowrap rounded-full bg-emerald px-[1.4rem] py-[0.55rem] text-[0.8rem] font-semibold tracking-[0.3px] text-white shadow-[0_0_0_0_rgba(0,80,50,0.5)] transition-all hover:-translate-y-px hover:bg-emerald-hover hover:shadow-[0_4px_20px_rgba(0,80,50,0.4)]"
-            >
-              Get In Touch
-            </a>
-            <button
-              className="relative hidden h-10 w-11 shrink-0 cursor-pointer flex-col justify-center rounded-lg border border-white/10 bg-white/[0.06] p-2 transition-colors hover:bg-white/10 max-nav:flex"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle navigation"
-              aria-expanded={menuOpen}
-            >
-              <span
-                className={`absolute left-1/2 block h-0.5 w-5 -translate-x-1/2 rounded-sm bg-white/85 transition-all duration-300 ${
-                  menuOpen ? 'top-[19px] rotate-45' : 'top-3'
-                }`}
-              />
-              <span
-                className={`absolute left-1/2 top-[19px] block h-0.5 w-5 -translate-x-1/2 rounded-sm bg-white/85 transition-all duration-300 ${
-                  menuOpen ? 'opacity-0' : 'opacity-100'
-                }`}
-              />
-              <span
-                className={`absolute left-1/2 block h-0.5 w-5 -translate-x-1/2 rounded-sm bg-white/85 transition-all duration-300 ${
-                  menuOpen ? 'top-[19px] -rotate-45' : 'top-[26px]'
-                }`}
-              />
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Mobile Drawer Overlay */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -325,7 +229,7 @@ function App() {
               </p>
               <a
                 href="#solutions"
-                className="mt-4 inline-block rounded-full bg-emerald px-10 py-[0.9rem] text-[0.85rem] font-bold tracking-[0.5px] text-white transition-all duration-300"
+                className="mt-4 inline-block rounded-full bg-brand px-10 py-[0.9rem] text-[0.85rem] font-bold tracking-[0.5px] text-white transition-all duration-300"
               >
                 LEARN MORE
               </a>
@@ -335,7 +239,7 @@ function App() {
       </section>
 
       {/* Solutions */}
-      <section id="solutions" className="bg-emerald py-[100px] text-white">
+      <section id="solutions" className="bg-brand py-[100px] text-white">
         <div className={containerClass}>
           <div className="mb-12">
             <div className="mb-5 inline-block rounded-[20px] bg-white/15 px-4 py-[0.35rem] text-[0.7rem] font-bold uppercase tracking-[1.5px] text-white">
@@ -417,7 +321,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-emerald-dark py-20 pb-8 text-white">
+      <footer className="bg-brand-dark py-20 pb-8 text-white">
         <div className={containerClass}>
           <div className="mb-12 grid grid-cols-1 gap-8 min-[601px]:grid-cols-2 min-[1025px]:grid-cols-[2fr_1fr_1fr_1fr] min-[1025px]:gap-12">
             <div>
@@ -450,7 +354,7 @@ function App() {
                 {['FB', 'TW', 'IG', 'LN'].map((social) => (
                   <span
                     key={social}
-                    className="flex h-[34px] w-[34px] cursor-pointer items-center justify-center rounded-full bg-white/10 text-[0.65rem] font-bold transition-all duration-300 hover:bg-emerald"
+                    className="flex h-[34px] w-[34px] cursor-pointer items-center justify-center rounded-full bg-white/10 text-[0.65rem] font-bold transition-all duration-300 hover:bg-brand"
                   >
                     {social}
                   </span>

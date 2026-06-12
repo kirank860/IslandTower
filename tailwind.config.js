@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./index.html', './src/**/*.{html,js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        emerald: {
+        brand: {
           DEFAULT: '#003322',
           dark: '#001a11',
           hover: '#004d33',
