@@ -33,30 +33,38 @@ function Sponsors() {
           <div className="mt-4 mx-auto h-[3px] w-12 rounded-full bg-[#00664f]" />
         </motion.div>
 
-        {/* Partners Grid */}
-        <div className="grid grid-cols-2 gap-5 lg:grid-cols-3 xl:grid-cols-6">
-          {sponsors.map((s, i) => (
-            <motion.div
-              key={i}
-              className="group flex h-[140px] cursor-pointer items-center justify-center rounded-xl border border-gray-200 bg-white p-6 transition-all duration-400"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, duration: 0.6 }}
-              whileHover={{
-                y: -6,
-                boxShadow: '0 15px 30px rgba(0, 0, 0, 0.05)',
-                borderColor: 'rgba(0, 102, 79, 0.15)',
-              }}
-            >
-              {/* Logo image — grayscale by default, colored on hover */}
-              <img
-                src={s.img}
-                alt={s.name}
-                className="max-h-19 max-w-full object-contain  transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
-              />
-            </motion.div>
-          ))}
+        {/* Infinite Partners Marquee */}
+        <div className="relative overflow-hidden py-4 marquee-fade-mask">
+          <div className="animate-marquee flex gap-6">
+            {/* First render list */}
+            {sponsors.map((s, i) => (
+              <div
+                key={`s1-${i}`}
+                className="group flex h-[145px] w-[240px] shrink-0 items-center justify-center rounded-2xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:border-[#00664f]/40 hover:shadow-lg hover:shadow-black/5"
+              >
+                <img
+                  src={s.img}
+                  alt={s.name}
+                  className="max-h-[76px] max-w-full object-contain transition-transform duration-500 group-hover:scale-108"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+            {/* Duplicated render list for seamless looping */}
+            {sponsors.map((s, i) => (
+              <div
+                key={`s2-${i}`}
+                className="group flex h-[145px] w-[240px] shrink-0 items-center justify-center rounded-2xl border border-gray-200 bg-white p-7 transition-all duration-300 hover:border-[#00664f]/40 hover:shadow-lg hover:shadow-black/5"
+              >
+                <img
+                  src={s.img}
+                  alt={s.name}
+                  className="max-h-[76px] max-w-full object-contain transition-transform duration-500 group-hover:scale-108"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

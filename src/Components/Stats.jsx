@@ -288,6 +288,7 @@ function Stats() {
         alt="Technical infrastructure drawing" 
         className="absolute left-[-60px] md:left-[-100px] top-[12%] w-[320px] md:w-[480px] h-auto opacity-[0.04] pointer-events-none select-none filter grayscale contrast-125 z-0"
         style={{ y: bgY1, rotate: -5 }}
+        loading="lazy"
       />
       {/* Right Blueprint: Slides downward on scroll (counter-parallax) */}
       <motion.img 
@@ -295,6 +296,7 @@ function Stats() {
         alt="Technical engineering detail" 
         className="absolute right-[-70px] md:right-[-120px] bottom-[15%] w-[280px] md:w-[440px] h-auto opacity-[0.04] pointer-events-none select-none filter grayscale contrast-125 z-0"
         style={{ y: bgY2, rotate: 6 }}
+        loading="lazy"
       />
 
       {/* Decorative Dashed Margins / Technical Blueprint Lines */}
@@ -372,6 +374,7 @@ function Stats() {
               src="/assets/bluewaters.png"
               alt="Island Tower Project Skyline"
               className="block w-full object-cover aspect-[21/9] min-h-[250px] transition-transform duration-700 hover:scale-103"
+              loading="lazy"
             />
             
             {/* Holographic scanning scanline */}
@@ -420,7 +423,7 @@ function Stats() {
         </motion.div>
 
         {/* ROW 3: Stats reveal (Centered layout from Sobha Realty) */}
-        <div className="text-center max-w-[950px] mx-auto relative">
+        <div id="quality" className="text-center max-w-[950px] mx-auto relative scroll-mt-24">
           <div className="text-[#00664f] text-[10px] md:text-[11px] font-bold tracking-[3px] uppercase mb-4">
             WHAT WE GOT
           </div>
@@ -525,7 +528,7 @@ function Stats() {
         <div className="border-t border-dashed border-gray-200 my-20 md:my-28 pointer-events-none select-none" />
 
         {/* ROW 4: "How We Partner" Section */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start mb-16">
+        <div id="work" className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start mb-16 scroll-mt-24">
           <div className="md:col-span-7">
             <div className="text-[#00664f] text-[10px] md:text-[11px] font-bold tracking-[3px] uppercase mb-4">
               HOW WE PARTNER
@@ -543,7 +546,7 @@ function Stats() {
         </div>
 
         {/* Process Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div id="process" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 scroll-mt-24">
           <ProcessCard3D 
             step="01" 
             title="Understand Your World" 

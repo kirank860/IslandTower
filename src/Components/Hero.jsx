@@ -33,6 +33,8 @@ const slides = [
 function Hero() {
   const videoRef = useRef(null)
   const [offsetY, setOffsetY] = useState(0)
+  const [contentOffsetY, setContentOffsetY] = useState(0)
+  const [gridOffsetY, setGridOffsetY] = useState(0)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isChanging, setIsChanging] = useState(false)
 
@@ -47,7 +49,9 @@ function Hero() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setOffsetY(window.scrollY * 0.3)
+      setOffsetY(window.scrollY * 0.42)
+      setContentOffsetY(window.scrollY * -0.15)
+      setGridOffsetY(window.scrollY * 0.2)
     }
     
     // 3D Cursor Parallax effect
@@ -133,13 +137,17 @@ function Hero() {
           muted
           loop
           playsInline
+          preload="metadata"
         >
           <source src={slides[currentIndex].video} type="video/mp4" />
         </video>
       </motion.div>
 
       {/* Floating 3D Holographic Blueprint Grid Overlay */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center opacity-20">
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center opacity-20"
+        style={{ transform: `translateY(${gridOffsetY}px)` }}
+      >
         <motion.div
           className="w-[450px] h-[450px] border border-white/5 rounded-full relative flex items-center justify-center"
           animate={{ rotate: 360 }}
@@ -169,7 +177,7 @@ function Hero() {
           className="max-w-[800px]"
           animate={{ rotateX, rotateY }}
           transition={{ type: 'spring', damping: 30, stiffness: 100 }}
-          style={{ transformStyle: 'preserve-3d' }}
+          style={{ transformStyle: 'preserve-3d', y: contentOffsetY }}
         >
           {/* Section label */}
           <motion.div

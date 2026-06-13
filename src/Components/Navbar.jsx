@@ -2,40 +2,37 @@ import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-  { label: 'Home', href: 'home' },
+  { label: 'Home', href: '#home' },
   {
     label: 'About Us',
-    href: 'about',
+    href: '#about',
     children: [
-      { label: 'Our Story', href: 'story' },
-      { label: 'Leadership', href: 'leadership' },
-      { label: 'Certifications', href: 'certifications' },
+      { label: 'Our Story', href: '#story' },
+      { label: 'Leadership', href: '#leadership' },
+      { label: 'Certifications', href: '#certifications' },
     ],
   },
   {
     label: 'How We Work',
-    href: 'work',
+    href: '#work',
     children: [
-      { label: 'Our Process', href: 'process' },
-      { label: 'Quality Control', href: 'quality' },
+      { label: 'Our Process', href: '#process' },
+      { label: 'Quality Control', href: '#quality' },
     ],
   },
   {
     label: 'Our Expertise',
-    href: 'expertise',
+    href: '#solutions',
     children: [
-      { label: 'Infrastructure', href: 'infrastructure' },
-      { label: 'MEP Services', href: 'mep' },
-      { label: 'Civil Works', href: 'civil' },
-      { label: 'Chemical', href: 'chemical' },
-      { label: 'Water & Energy', href: 'water' },
+      { label: 'Infrastructure', href: '#infrastructure' },
+      { label: 'MEP Services', href: '#mep' },
+      { label: 'Civil Works', href: '#civil' },
+      { label: 'Chemical', href: '#chemical' },
+      { label: 'Water & Energy', href: '#water' },
     ],
   },
-  { label: 'Projects', href: 'projects' },
-  { label: 'R&D', href: 'rd' },
-  { label: 'Media Center', href: 'media' },
-  { label: 'Careers', href: 'careers' },
-  { label: 'Contact Us', href: 'contact' },
+  { label: '3D Showroom', href: '#three-d-showroom' },
+  { label: 'Contact Us', href: '#contact' },
 ]
 
 /* ─── Desktop Dropdown ─────────────────────────────────── */

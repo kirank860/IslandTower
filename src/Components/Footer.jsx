@@ -23,7 +23,7 @@ const socials = [
 
 function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-[#001a11] via-[#00261a] to-[#001a11] py-20 pb-8 text-white">
+    <footer id="contact" className="relative overflow-hidden bg-gradient-to-br from-[#001a11] via-[#00261a] to-[#001a11] py-20 pb-8 text-white scroll-mt-24">
       {/* Background decorative circle */}
       <div className="absolute -right-32 -top-32 h-64 w-64 rounded-full bg-brand/10 blur-3xl" />
       <div className="absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-brand/5 blur-2xl" />
