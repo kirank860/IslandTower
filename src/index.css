@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syncopate:wght@400;700&display=swap');
+
 @layer base {
   html {
     @apply scroll-smooth;
@@ -25,4 +27,83 @@
   img {
     @apply max-w-full block;
   }
+}
+
+@layer utilities {
+  /* Section label badge — small uppercase colored pill */
+  .section-label {
+    @apply mb-5 inline-block rounded-full bg-brand/10 px-5 py-1.5 text-[0.7rem] font-bold uppercase tracking-[2px] text-brand;
+  }
+  .section-label-light {
+    @apply mb-5 inline-block rounded-full bg-white/15 px-5 py-1.5 text-[0.7rem] font-bold uppercase tracking-[2px] text-white;
+  }
+}
+
+/* Parallax helper */
+.parallax-container {
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+/* Smooth counter digit transitions */
+.counter-digit {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hero scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+/* Image reveal clip animation */
+.image-reveal {
+  clip-path: inset(0 100% 0 0);
+}
+.image-reveal.revealed {
+  animation: revealClip 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes revealClip {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+/* Grayscale → color transition for sponsor logos */
+.grayscale-hover {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.4s ease;
+}
+.grayscale-hover:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Smooth section separators */
+.section-divider {
+  position: relative;
+}
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #003322, transparent);
+  border-radius: 2px;
 }
