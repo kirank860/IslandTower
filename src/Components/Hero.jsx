@@ -162,7 +162,7 @@ function Hero() {
 
       {/* Content Container (Perspective setup for 3D cursor tilt) */}
       <div 
-        className={`${containerClass} relative z-[1] w-full pt-16`}
+        className={`${containerClass} relative z-[1] w-full pt-8 sm:pt-0`}
         style={{ perspective: '1000px' }}
       >
         <motion.div
@@ -185,7 +185,7 @@ function Hero() {
 
           {/* Heading — word-by-word 3D swing reveal */}
           <h1 
-            className="mb-6 text-[clamp(2.1rem,5.5vw,4.2rem)] font-extrabold leading-[1.05] tracking-tight uppercase"
+            className="mb-6 text-[clamp(1.8rem,5.5vw,4.2rem)] font-extrabold leading-[1.05] tracking-tight uppercase"
             style={{ perspective: '1000px', transformStyle: 'preserve-3d', translateZ: '60px' }}
           >
             {slides[currentIndex].headingWords.map((word, i) => (
@@ -253,9 +253,9 @@ function Hero() {
       </div>
 
       {/* Slider controls (Arrows + Dots in a single responsive row) */}
-      <div className="absolute bottom-16 left-6 right-6 z-10 flex items-center justify-between sm:bottom-10 sm:left-8 sm:right-8 md:left-12 md:right-12">
+      <div className="absolute bottom-12 left-6 right-6 z-10 flex items-center justify-between sm:bottom-10 sm:left-8 sm:right-8 md:left-12 md:right-12">
         {/* Pagination Dots */}
-        <div className="flex gap-2.5 mb-5">
+        <div className="flex gap-2.5">
           {slides.map((_, index) => (
             <button
               key={index}
@@ -269,7 +269,7 @@ function Hero() {
         </div>
 
         {/* Action Arrows */}
-        <div className="flex items-center gap-3 mb-5">
+        <div className="flex items-center gap-3">
           <button
             onClick={prevSlide}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/30 text-white backdrop-blur-md transition-all hover:bg-white hover:text-black hover:border-white"
@@ -284,7 +284,7 @@ function Hero() {
           </span>
           <button
             onClick={nextSlide}
-            className="flex h-10 w-10 items-center   justify-center rounded-full border border-white/15 bg-black/30 text-white backdrop-blur-md transition-all hover:bg-white hover:text-black hover:border-white"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/30 text-white backdrop-blur-md transition-all hover:bg-white hover:text-black hover:border-white"
             aria-label="Next Video"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -301,7 +301,7 @@ function Hero() {
         animate={{ opacity: 0.7 }}
         transition={{ delay: 1.2, duration: 1 }}
       >
-        <span className="text-[0.65rem] font-medium uppercase tracking-[3px]">Scroll</span>
+     
         <motion.svg
           className="h-5 w-5"
           fill="none"
