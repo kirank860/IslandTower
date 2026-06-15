@@ -62,11 +62,10 @@ function DropdownMenu({ items, isOpen, scrolled }) {
               <a
                 key={item.href}
                 href={item.href}
-                className={`block px-5 py-2.5 text-[0.82rem] font-medium tracking-wide transition-all duration-200 ${
-                  scrolled
-                    ? 'text-gray-700 hover:bg-[#00664f]/5 hover:text-[#00664f]'
-                    : 'text-white/70 hover:bg-white/10 hover:text-white'
-                }`}
+                className={`block px-5 py-2.5 text-[0.82rem] font-medium tracking-wide transition-all duration-200 ${scrolled
+                  ? 'text-gray-700 hover:bg-[#00664f]/5 hover:text-[#00664f]'
+                  : 'text-white/70 hover:bg-white/10 hover:text-white'
+                  }`}
               >
                 {item.label}
               </a>
@@ -98,13 +97,12 @@ function NavItem({ link, scrolled }) {
     : 'text-white/80 hover:text-white'
 
   const labelSpan = <span className="relative z-10">{link.label}</span>
-  
+
   const hoverIndicator = hovered && (
     <motion.span
       layoutId="navUnderline"
-      className={`absolute bottom-0 left-3 right-3 h-[2px] rounded-full ${
-        scrolled ? 'bg-[#00664f]' : 'bg-white'
-      }`}
+      className={`absolute bottom-0 left-3 right-3 h-[2px] rounded-full ${scrolled ? 'bg-[#00664f]' : 'bg-white'
+        }`}
       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
     />
   )
@@ -143,9 +141,8 @@ function NavItem({ link, scrolled }) {
       >
         {labelSpan}
         <svg
-          className={`h-3 w-3 shrink-0 opacity-60 transition-transform duration-200 ${
-            open ? 'rotate-180' : ''
-          }`}
+          className={`h-3 w-3 shrink-0 opacity-60 transition-transform duration-200 ${open ? 'rotate-180' : ''
+            }`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -188,18 +185,16 @@ function MobileNavItem({ link, onClose }) {
   return (
     <div className="space-y-1">
       <button
-        className={`flex w-full items-center justify-between rounded-xl px-5 py-3.5 text-[0.92rem] font-semibold transition-all duration-300 ${
-          open 
-            ? 'bg-[#00ffc4]/10 text-[#00ffc4]' 
-            : 'text-white/80 hover:bg-white/5 hover:text-white'
-        }`}
+        className={`flex w-full items-center justify-between rounded-xl px-5 py-3.5 text-[0.92rem] font-semibold transition-all duration-300 ${open
+          ? 'bg-[#00ffc4]/10 text-[#00ffc4]'
+          : 'text-white/80 hover:bg-white/5 hover:text-white'
+          }`}
         onClick={() => setOpen(!open)}
       >
         <span>{link.label}</span>
         <svg
-          className={`h-4 w-4 opacity-60 transition-transform duration-300 ${
-            open ? 'rotate-180 text-[#00ffc4]' : ''
-          }`}
+          className={`h-4 w-4 opacity-60 transition-transform duration-300 ${open ? 'rotate-180 text-[#00ffc4]' : ''
+            }`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -208,7 +203,7 @@ function MobileNavItem({ link, onClose }) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      
+
       <AnimatePresence>
         {open && (
           <motion.div
@@ -339,16 +334,14 @@ export default function Navbar() {
 
       {/* ── MAIN HEADER ─────────────────────────────────── */}
       <header
-        className={`fixed left-0 right-0 z-[1000] transition-all duration-300 ${
-          scrolled
-            ? 'top-0 bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100/50 py-0'
-            : 'top-0 sm:top-7 bg-transparent py-2'
-        }`}
+        className={`fixed left-0 right-0 z-[1000] transition-all duration-300 ${scrolled
+          ? 'top-0 bg-white/95 backdrop-blur-md shadow-md border-b border-gray-100/50 py-0'
+          : 'top-0 sm:top-7 bg-transparent py-2'
+          }`}
       >
         <div
-          className={`mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-6 transition-all duration-300 ${
-            scrolled ? 'h-[66px]' : 'h-[80px]'
-          }`}
+          className={`mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-6 transition-all duration-300 ${scrolled ? 'h-[66px]' : 'h-[80px]'
+            }`}
         >
           {/* ── Logo ── */}
           <a href="#home" className="flex shrink-0 items-center gap-2.5" aria-label="Island Tower Home">
@@ -368,25 +361,23 @@ export default function Navbar() {
                   <polygon
                     points="19,3 36,43 2,43"
                     fill="none"
-                    stroke={scrolled ? '#000000' : '#fff'}
+                    stroke="#ef4444"
                     strokeWidth="2.2"
                   />
-                  <line x1="19" y1="3" x2="19" y2="43" stroke={scrolled ? '#000000' : '#fff'} strokeWidth="1.4" />
-                  <line x1="10" y1="27" x2="28" y2="27" stroke={scrolled ? '#000000' : '#fff'} strokeWidth="1.4" />
-                  <line x1="13.5" y1="17" x2="24.5" y2="17" stroke={scrolled ? '#000000' : '#fff'} strokeWidth="1.4" />
+                  <line x1="19" y1="3" x2="19" y2="43" stroke="#ef4444" strokeWidth="1.4" />
+                  <line x1="10" y1="27" x2="28" y2="27" stroke="#ef4444" strokeWidth="1.4" />
+                  <line x1="13.5" y1="17" x2="24.5" y2="17" stroke="#ef4444" strokeWidth="1.4" />
                 </svg>
                 <div>
                   <div
-                    className={`text-[0.75rem] md:text-[0.82rem] font-black leading-none tracking-[2px] md:tracking-[2.5px] transition-colors duration-300 ${
-                      scrolled ? 'text-black' : 'text-white'
-                    }`}
+                    className={`text-[0.75rem] md:text-[0.82rem] font-black leading-none tracking-[2px] md:tracking-[2.5px] transition-colors duration-300 ${scrolled ? 'text-black' : 'text-white'
+                      }`}
                   >
                     ISLAND TOWER
                   </div>
                   <div
-                    className={`mt-[3px] text-[0.38rem] md:text-[0.42rem] uppercase tracking-[1.5px] md:tracking-[2px] transition-colors duration-300 ${
-                      scrolled ? 'text-gray-600' : 'text-white/40'
-                    }`}
+                    className={`mt-[3px] text-[0.38rem] md:text-[0.42rem] uppercase tracking-[1.5px] md:tracking-[2px] transition-colors duration-300 ${scrolled ? 'text-gray-600' : 'text-white/40'
+                      }`}
                   >
                     Electromechanical Works LLC
                   </div>
@@ -408,11 +399,10 @@ export default function Navbar() {
           {/* ── Right: Search + Hamburger ── */}
           <div className="flex shrink-0 items-center gap-1.5">
             <button
-              className={`flex h-9 w-9 items-center justify-center rounded-full transition-all duration-300 ${
-                scrolled
-                  ? 'text-gray-700 hover:bg-[#00664f]/10 hover:text-[#00664f]'
-                  : 'text-white/70 hover:bg-white/10 hover:text-white'
-              }`}
+              className={`flex h-9 w-9 items-center justify-center rounded-full transition-all duration-300 ${scrolled
+                ? 'text-gray-700 hover:bg-[#00664f]/10 hover:text-[#00664f]'
+                : 'text-white/70 hover:bg-white/10 hover:text-white'
+                }`}
               onClick={() => setSearchOpen(true)}
               aria-label="Search"
             >
@@ -432,11 +422,10 @@ export default function Navbar() {
             </button>
 
             <button
-              className={`flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-full transition-all duration-300 xl:hidden ${
-                scrolled
-                  ? 'text-gray-700 hover:bg-[#00664f]/10 hover:text-[#00664f]'
-                  : 'text-white/70 hover:bg-white/10 hover:text-white'
-              }`}
+              className={`flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-full transition-all duration-300 xl:hidden ${scrolled
+                ? 'text-gray-700 hover:bg-[#00664f]/10 hover:text-[#00664f]'
+                : 'text-white/70 hover:bg-white/10 hover:text-white'
+                }`}
               onClick={() => setMenuOpen(true)}
               aria-label="Open navigation"
             >
@@ -491,10 +480,10 @@ export default function Navbar() {
                   ) : (
                     <div className="flex items-center gap-2">
                       <svg viewBox="0 0 38 46" className="h-[30px] w-auto" fill="none">
-                        <polygon points="19,3 36,43 2,43" fill="none" stroke="#fff" strokeWidth="2.2" />
-                        <line x1="19" y1="3" x2="19" y2="43" stroke="#fff" strokeWidth="1.4" />
-                        <line x1="10" y1="27" x2="28" y2="27" stroke="#fff" strokeWidth="1.4" />
-                        <line x1="13.5" y1="17" x2="24.5" y2="17" stroke="#fff" strokeWidth="1.4" />
+                        <polygon points="19,3 36,43 2,43" fill="none" stroke="#ef4444" strokeWidth="2.2" />
+                        <line x1="19" y1="3" x2="19" y2="43" stroke="#ef4444" strokeWidth="1.4" />
+                        <line x1="10" y1="27" x2="28" y2="27" stroke="#ef4444" strokeWidth="1.4" />
+                        <line x1="13.5" y1="17" x2="24.5" y2="17" stroke="#ef4444" strokeWidth="1.4" />
                       </svg>
                       <div>
                         <div className="text-[0.7rem] font-black tracking-[2px] text-white">

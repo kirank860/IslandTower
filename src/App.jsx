@@ -2,9 +2,9 @@ import React, { lazy, Suspense } from 'react'
 import { ReactLenis } from 'lenis/react'
 import Navbar from './Components/Navbar'
 import Hero from './Components/Hero'
-import About from './Components/About'
 
 // Lazy-loaded components
+const About = lazy(() => import('./Components/About'))
 const Stats = lazy(() => import('./Components/Stats'))
 const Solutions = lazy(() => import('./Components/Solutions'))
 const ThreeDShowcase = lazy(() => import('./Components/ThreeDShowcase'))
@@ -22,7 +22,9 @@ function App() {
           <Stats />
         </Suspense>
         
-        <About />
+        <Suspense fallback={null}>
+          <About />
+        </Suspense>
         
         <Suspense fallback={null}>
           <Solutions />
