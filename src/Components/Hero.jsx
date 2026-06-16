@@ -76,6 +76,19 @@ function Hero() {
     }
   }, [])
 
+  // Explicitly trigger load & play on slide change (fixes autoplay bugs on iOS Safari)
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load()
+      const playPromise = videoRef.current.play()
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log("Autoplay prevented on this device:", error)
+        })
+      }
+    }
+  }, [currentIndex])
+
   const changeSlide = (newIndex) => {
     if (isChanging) return
     setIsChanging(true)
@@ -143,9 +156,8 @@ function Hero() {
           playsInline
           preload="metadata"
           poster={slides[currentIndex].poster}
-        >
-          <source src={slides[currentIndex].video} type="video/mp4" />
-        </video>
+          src={slides[currentIndex].video}
+        />
       </motion.div>
 
       {/* Floating 3D Holographic Blueprint Grid Overlay */}
