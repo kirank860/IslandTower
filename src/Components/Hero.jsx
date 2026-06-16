@@ -9,28 +9,28 @@ const slides = [
     headingWords: ['Leading', 'Infrastructure', 'Contractor'],
     subtitle: 'Island Tower is building the future — a premier electromechanical contractor delivering engineering excellence across the Middle East.',
     video: '/assets/video_4.mp4',
-    poster: '/assets/hero_industrial.png'
+    poster: '/assets/hero_new_poster.webp'
   },
   {
     label: 'MEP Services',
     headingWords: ['Engineering', 'Precision', 'Solutions'],
     subtitle: 'Providing world-class mechanical, electrical, and plumbing installations for signature skyscrapers and industrial facilities.',
     video: '/assets/video_1.mp4',
-    poster: '/assets/worker.png'
+    poster: '/assets/hero_worker_hq.webp'
   },
   {
     label: 'Civil Works',
     headingWords: ['Constructing', 'Modern', 'Landmarks'],
     subtitle: 'Transforming landscapes with high-durability concrete structures, civil engineering projects, and architectural marvels.',
     video: '/assets/video_3.mp4',
-    poster: '/assets/dubai.png'
+    poster: '/assets/hero_civil_hq.webp'
   },
   {
     label: 'Water & Energy',
     headingWords: ['Sustainable', 'Energy', 'Systems'],
     subtitle: 'Pioneering smart water treatment, distribution grids, and energy-efficient installations for sustainable urban growth.',
     video: '/assets/video_2.mp4',
-    poster: '/assets/infrastructure.png'
+    poster: '/assets/hero_utility_hq.webp'
   }
 ]
 
